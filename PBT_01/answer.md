@@ -111,3 +111,20 @@ Không chạy code, hãy **vẽ tay** (hoặc mô tả bằng text art) kết qu
 3. Tải trang chậm: Trình duyệt phải xử lý xong toàn bộ bảng mới hiển thị
 
 ---
+
+## PHẦN B — THỰC HÀNH CODE (60 điểm)
+
+### Bài B3 (15đ) — Debug HTML
+
+# Giải bài tập Debug HTML
+
+Lỗi 1: Dòng 1 — Khai báo `<!DOCTYPE>` không đầy đủ — Cách sửa: Sửa thành `<!DOCTYPE html>`.
+Lỗi 2: Dòng 1 — Thẻ `<title>` thiếu thẻ đóng — Cách sửa: Thêm `</title>` sau chữ "Trang web".
+Lỗi 3: Dòng 2 — `charset="utf8"` chưa chuẩn — Cách sửa: Sửa thành `charset="UTF-8"`.
+Lỗi 4: Dòng 4 — Thẻ đóng `<h1>` viết thiếu dấu `/` — Cách sửa: Thêm `</h1>`.
+Lỗi 5: Dòng 8 — Thẻ đóng `<a>` bị viết nhầm thành thẻ mở — Cách sửa: Sửa thành `</a>`.
+Lỗi 6: Dòng 16 — Thuộc tính `src` thiếu dấu ngoặc kép — Cách sửa: Sửa thành `src="iphone.jpg"`.
+Lỗi 7: Dòng 16 — Thẻ `<img>` thiếu thuộc tính `alt` — Cách sửa: Thêm `alt="iPhone 16 Pro"`.
+Lỗi 8: Dòng 18 — Các thẻ lồng nhau sai thứ tự đóng p trước b — Cách sửa: Đóng `</b>` trước rồi mới đóng `</p>`.
+Lỗi 9: Dòng 34 — Sử dụng thẻ `<main>` thứ hai trong một trang — Cách sửa: Đổi thành thẻ `<aside>`.
+Lỗi 10: Dòng 38 — Thẻ `<p>` trong footer thiếu thẻ đóng — Cách sửa: Thêm `</p>` ở cuối nội dung.
