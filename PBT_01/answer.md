@@ -218,4 +218,4 @@ Thực ra, tư duy "dùng `<div>` cho mọi thứ rồi đắp class" nghe thì 
 
 Tất nhiên, **`<div>` không xấu**, nó vẫn cực kỳ cần thiết trong trường hợp chúng ta cần một cái "hộp" thuần túy để phục vụ mục đích **trang trí hoặc bố cục (styling/layout)**. Chẳng hạn như dùng `<div>` làm wrapper để căn giữa nội dung bằng Flexbox hay tạo các lớp bọc để xử lý hiệu ứng CSS phức tạp. Những lúc đó, `div` là lựa chọn số một vì nó không mang ý nghĩa về nội dung.
 
-Tóm lại, viết code chạy được thì dễ, nhưng viết code "sạch" và có tâm thì bắt buộc phải dùng Semantic HTML.
+Tóm lại, viết code chạy được thì dễ, nhưng viết code đẹp và chuẩn thì bắt buộc phải dùng Semantic HTML.
