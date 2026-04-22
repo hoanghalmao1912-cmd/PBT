@@ -15,12 +15,16 @@
 ### Câu A1 (5đ) — HTTP & Browser
 
 Tài liệu tham chiếu (`01_introduction_html_universe.md`) Phần 1: Web hoạt động như thế nào?
+**Bài 1**
 
 1. DNS Lookup: Trình duyệt gửi yêu cầu đến DNS Server để tìm địa chỉ IP tương ứng với tên miền `shopee.vn`.
 2. Thiết lập kết nối: Sau khi có IP, trình duyệt thiết lập kết nối TCP với server. Vì đây là giao thức HTTPS, một quá trình bắt tay TLS/SSL cũng diễn ra để đảm bảo kết nối được mã hóa an toàn.
 3. Gửi HTTP Request: Trình duyệt gửi một HTTP Request (phương thức GET) đến server của Shopee để yêu cầu nội dung trang web.
 4. Server phản hồi: Server nhận yêu cầu, xử lý và gửi trả lại một HTTP Response bao gồm mã trạng thái (Status Code: 200 OK) và nội dung của file HTML.
 5. Render (Trình bày trang web): Trình duyệt phân tích file HTML, tiếp tục tải các tài nguyên phụ (CSS, JavaScript, hình ảnh) để hiển thị giao diện hoàn chỉnh lên màn hình.
+
+**Bài 2**
+![Kết quả ảnh bài 2 câu 1](screenshotBai1A.png)
 
 ### Câu A2 (5đ) — Semantic HTML
 
