@@ -99,3 +99,49 @@
 - Khi nào dùng: Dùng khi ảnh là một đơn vị nội dung độc lập, cần có chú thích rõ ràng hoặc được trích dẫn trong bài viết
 - Ví dụ 1: Ảnh sản phẩm trong trang chi tiết kèm theo tên và giá tiền bên dưới
 - Ví dụ 2: Sơ đồ, biểu đồ hoặc ảnh minh họa trong một bài báo cần ghi nguồn hoặc mô tả nội dung
+
+## PHẦN C — PHÂN TÍCH & SUY LUẬN (20 điểm)
+
+### Câu C1 (10đ) — Debug Form
+
+- Lỗi 1: Dòng 2 — Input "Tên" không có label for="...", vi phạm accessibility
+  Sửa: label for="name">Tên:</label> <input type="text" id="name" name="name" required
+- Lỗi 2: Dòng 4 — Input "Email" dùng placeholder thay thế nhãn label, gây khó khăn cho trình đọc màn hình và người dùng
+  Sửa: label for="email">Email:</label> <input type="email" id="email" name="email" placeholder="Email của bạn" required
+- Lỗi 3: Dòng 6 — Input "Mật khẩu" thiếu nhãn label và id liên kết
+  Sửa: label for="password">Mật khẩu:</label> <input type="password" id="password" name="password" required
+- Lỗi 4: Dòng 7 — Input "Nhập lại mật khẩu" thiếu nhãn label và id liên kết
+  Sửa: label for="re-password">Nhập lại mật khẩu:</label> <input type="password" id="re-password" name="re-password" required
+- Lỗi 5: Dòng 9 — Input "Phone" dùng type="text" không tối ưu cho bàn phím di động và thiếu label association
+  Sửa: label for="phone">Phone:</label> <input type="tel" id="phone" name="phone" value="0901234567"
+- Lỗi 6: Dòng 11 — Thẻ select thiếu nhãn label và các option thiếu thuộc tính value để định danh dữ liệu
+  Sửa: label for="city">Thành phố:</label> <select id="city" name="city"><option value="hanoi">Hà Nội</option><option value="hcm">TP.HCM</option></select>
+- Lỗi 7: Dòng 16 — Thẻ label "Điều khoản" thiếu input checkbox đi kèm để người dùng có thể tương tác
+  Sửa: input type="checkbox" id="terms" name="terms" required> <label for="terms">Tôi đồng ý điều khoản</label>
+- Lỗi 8: Toàn bộ form — Các thẻ input thiếu thuộc tính "name", khiến dữ liệu không được gửi lên server khi submit
+  Sửa: Thêm thuộc tính name="tên_trường" cho tất cả thẻ input và select trong form.
+
+### Câu C2 (10đ) — Thiết kế chiến lược Validation
+
+1. Viết `pattern` Regex cho HTML5
+
+- **CMND/CCCD (Đúng 12 chữ số):**
+  `pattern="[0-9]{12}"`
+- **Số tài khoản (Từ 10 đến 15 chữ số):**
+  `pattern="[0-9]{10,15}"`
+
+2. HTML5 Validation không đủ an toàn cho ngân hàng
+
+- Người dùng có thể dùng f12 hay developer tool để xóa các thuộc tính require hay pattern trực tiếp trên mã nguồn
+- Phụ thuộc vào trình duyệt, một số trình duyệt cũ hoặc không hỗ trợ html 5 có thể không thực hiện đúng các ràng buộc validation này
+
+3. 3 loại Validation mà HTML5 KHÔNG THỂ làm được (Phải dùng JavaScript)
+
+- Kiểm tra dữ liệu tồn tại ví dụ như email hay số điện thoại người dùng đã đăng kí trong database
+- So sánh giữa các trường như nhập mật khẩu và kiểm tra lại mật khẩu có trùng nhau không
+- Việc xử lí các logic phức tạp như các thuật toán của ngân hàng để kiểm tra số tài khoản hay việc giới hạn độ tuổi dựa trên ngày sinh đã nhập
+
+4. 2 rủi ro bảo mật nếu chỉ validate trên Frontend
+
+- Gây sai lệch tính toàn vẹn dữ liệu như dữ liệu rác hoặc sai định dạng (ví dụ: số tài khoản chứa chữ cái) lọt vào cơ sở dữ liệu sẽ gây lỗi hệ thống trong các quy trình xử lý giao dịch
+- Nếu Backend không kiểm soát dữ liệu đầu vào, kẻ tấn công có thể chèn mã độc dẫn đến mất mát dữ liệu hoặc chiếm quyền điều khiển hệ thống
