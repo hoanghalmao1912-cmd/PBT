@@ -54,3 +54,31 @@
 8. .top-bar.dark h1 → Chọn: "ShopTLU"
 
 <img src="/Users/hanguyen/Documents/PBT/PBT_03/screenshots/Screenshot 2026-05-03 at 23.19.31.png" width="300" alt="" >
+
+### Câu A3 (7đ) — Box Model — Tính toán kích thước
+
+/_ Trường hợp 1: content-box (mặc định) _/
+
+- Chiều rộng hiển thị = 400 + 40 + 10 = 450 (do padding và border là cả trái lẫn phải và đang là content-box)
+- Không gian chiếm trên trang = 450 + 20(tổng của margin trái phải) = 470
+
+/_ Trường hợp 2: border-box _/
+
+- Chiều rộng hiển thị = 400
+- Kích thước content thực tế = 400 - 20\*2 của padding và - 10 border = 350px
+- Không gian chiếm trên trang = 400 + 20(của margin trái phải)
+
+/_ Trường hợp 3: Margin collapse _/
+
+- Khoảng cách giữa box-a và box-b = 40
+- Giải thích tại sao KHÔNG PHẢI 65px: Khi hai lề dọc (top và bottom) của hai khối nằm đè lên nhau, chúng không đứng xếp hàng nối tiếp nhau (25+40=65) mà chúng hòa vào nhau và trình duyệt sẽ chọn giá trị lớn nhất làm khoảng cách cuối cùng
+
+### Câu A4 (5đ) — Specificity (Độ ưu tiên)
+
+1. Tính specificity
+
+   <img src="/Users/hanguyen/Documents/PBT/PBT_03/screenshots/Screenshot 2026-05-05 at 21.00.36.png" width="300" alt="" >
+
+2. Element sẽ có màu đỏ do rule C có a = 1 tức là có id selector nên nó thắng tuyệt đối
+3. Element sẽ có màu cam do đó là inline nên có độ ưu tiên cao hơn các selector còn lại
+4. Element sẽ có màu đen do việc dùng !important nó sẽ đè lên tất cả dù các selector còn lại có mạnh đến đâu
