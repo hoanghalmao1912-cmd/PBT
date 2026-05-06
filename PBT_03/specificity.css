@@ -1,0 +1,49 @@
+/* 1. Universal Selector - Specificity: 0,0,0 */
+* {
+  color: gray;
+}
+
+/* 2. Element Selector - Specificity: 0,0,1 */
+p {
+  color: red;
+}
+
+/* 3. Class Selector - Specificity: 0,1,0 */
+.text {
+  color: blue;
+}
+
+/* 4. Two Classes - Specificity: 0,2,0 */
+.text.highlight {
+  color: green;
+}
+
+/* 5. Element + Two Classes - Specificity: 0,2,1 */
+p.text.highlight {
+  color: orange;
+}
+
+/* 6. ID Selector - Specificity: 1,0,0 */
+#demo {
+  color: purple;
+}
+
+/* 7. ID + Element - Specificity: 1,0,1 */
+p#demo {
+  color: brown;
+}
+
+/* 8. ID + Class - Specificity: 1,1,0 */
+#demo.text {
+  color: pink;
+}
+
+/* 9. ID + Two Classes - Specificity: 1,2,0 */
+#demo.text.highlight {
+  color: cyan;
+}
+
+/* 10. ID + Element + Two Classes - Specificity: 1,2,1 */
+p#demo.text.highlight {
+  color: black;
+}

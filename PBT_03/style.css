@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: white;
+  color: black;
+  line-height: 1.6;
+  margin: 0;
+}
+
+header {
+  background: linear-gradient(to right, blue, darkblue);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: yellow;
+}
+
+nav ul li a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+nav ul li a.active {
+  color: orange;
+  font-weight: bold;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  border: 1px solid gray;
+}
+
+thead tr {
+  background-color: darkblue;
+  color: white;
+}
+
+tbody tr:nth-child(even) {
+  background-color: lightgray;
+}
+
+tbody tr:hover {
+  background-color: silver;
+}
+
+footer {
+  background-color: black;
+  color: lightgray;
+  text-align: center;
+  padding: 20px;
+}
+
+#Tôi {
+  padding: 15px;
+}
+
+section h2 {
+  color: blue;
+}

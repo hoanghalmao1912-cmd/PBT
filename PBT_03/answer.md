@@ -65,7 +65,7 @@
 /_ Trường hợp 2: border-box _/
 
 - Chiều rộng hiển thị = 400
-- Kích thước content thực tế = 400 - 20\*2 của padding và - 10 border = 350px
+- Kích thước content thực tế = 400 - 20\*2 của padding và - 10 của border = 350px
 - Không gian chiếm trên trang = 400 + 20(của margin trái phải)
 
 /_ Trường hợp 3: Margin collapse _/
@@ -82,3 +82,77 @@
 2. Element sẽ có màu đỏ do rule C có a = 1 tức là có id selector nên nó thắng tuyệt đối
 3. Element sẽ có màu cam do đó là inline nên có độ ưu tiên cao hơn các selector còn lại
 4. Element sẽ có màu đen do việc dùng !important nó sẽ đè lên tất cả dù các selector còn lại có mạnh đến đâu
+
+## PHẦN B — THỰC HÀNH CODE (55 điểm)
+
+### Bài B2 (20đ) — Box Model Lab
+
+- Hộp 1 (content-box): chiều rộng thực tế = 350 px (đo từ DevTools)
+- Hộp 2 (border-box): chiều rộng thực tế = 300 px (đo từ DevTools)
+
+    <img src="/Users/hanguyen/Documents/PBT/PBT_03/screenshots/Screenshot 2026-05-05 at 21.54.22.png" width="300" alt="" >
+
+    <img src="/Users/hanguyen/Documents/PBT/PBT_03/screenshots/Screenshot 2026-05-05 at 21.54.29.png" width="300" alt="" >
+
+- Vì content-box giữ nguyên kích thước nội dung là 300px, sau đó cộng thêm padding (20px mỗi bên) và border (5px mỗi bên) tổng: 300+20+20+5+5=350
+- Vì border-box gộp cả padding và border vào trong con số 300px
+
+- Trường hợp dùng border-box thì tổng chiều rộng bằng 250px + 500px + 250px = 1000px do padding đã được tính vào trong width đó
+- Trường hợp không dùng border-box thì:
+
+Cột trái: 250px(width)+15px(padding−left)+15px(padding−right)=280px
+
+Cột giữa: 500px(width)+20px(padding−left)+20px(padding−right)=540px
+
+Cột phải: 250px(width)+15px(padding−left)+15px(padding−right)=280px
+
+Tổng thực tế: 280+540+280=1100px
+
+- Kết quả khi dùng border-box:
+
+    <img src="/Users/hanguyen/Documents/PBT/PBT_03/screenshots/Screenshot 2026-05-06 at 20.14.23.png" width="500" alt="" >
+
+### Bài B3 (15đ) — Specificity Battle
+
+- Màu hiển thị trên element sẽ là màu đen do có specificity cao nhất là (1,2,1)
+- Dù có thay đổi vị trí thì màu vẫn sẽ là màu đen do trình duyệt sẽ ưu tiên specificity cao nhất trước rồi nếu rule nó bằng nhau thì mới ưu tiên cái nào viết sau
+- Hình ảnh kết quả:
+
+    <img src="/Users/hanguyen/Documents/PBT/PBT_03/screenshots/Screenshot 2026-05-06 at 20.49.14.png" width="300" alt="" >
+
+## PHẦN C — DEBUG & SUY LUẬN (20 điểm)
+
+### Câu C1 (10đ) — Debug CSS Layout
+
+1. Tính chiều rộng thực tế:
+
+- Sidebar: 300px(width)+40px(padding)+2px(border)=342px
+- Content: 660px(width)+60px(padding)+2px(border)=722px
+- Tổng là 1064px
+
+2. Giải thích layout bị vỡ do: thằng container cha rộng có 960px thôi trong khi chiều rộng thực tế là 1064px nên trình duyệt không còn chỗ trống để chứa nên sẽ đẩy xuống dòng
+
+3. 2 cách sửa là:
+
+- Dùng border-box
+- Mình sẽ phải trừ bớt padding và border đi sao cho nó khớp với 960px
+
+### Câu C2 (10đ) — Cascade Puzzle
+
+1. "Sản phẩm A" (h2) có `font-size` = 20px và `color` = green
+
+- có độ ưu tiên cao hơn và ghi đè các thiết lập từ container
+- Mặc dù có #featured .title định nghĩa màu đỏ, nhưng class .highlight sử dụng thuộc tính !important, khiến nó trở thành mức ưu tiên cao nhất
+
+2. "Mô tả sản phẩm" (p trong card featured) có `color` = blue
+
+- color: blue. Thẻ p này nằm trong .card có định nghĩa color: blue. Vì nó có thuộc tính color: inherit, nó sẽ lấy trực tiếp màu từ phần tử cha gần nhất là .card
+
+3. "Sản phẩm B" (h2) có `font-size` = 20px và `color` = blue
+
+- font-size: 20px. Tương tự Sản phẩm A, nó nhận giá trị từ .card .title
+- color: blue. Vì không có ID #featured hay class .highlight áp dụng lên phần tử này, nó kế thừa màu từ .card
+
+4. "Mô tả sản phẩm B" (p.highlight) có `color` = green
+
+- color: green. Thuộc tính .highlight { color: green !important; } áp dụng trực tiếp lên thẻ p này và ghi đè tất cả các quy tắc màu sắc khác
