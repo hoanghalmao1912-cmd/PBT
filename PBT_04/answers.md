@@ -56,3 +56,11 @@ Hàng 2: Items 4, 5, 6
 Hàng 3: Item 7 nằm ở cột đầu tiên bên trái, hai cột còn lại để trống
 
 <img src="/Users/hanguyen/Documents/PBT/PBT_04/screenshots/Screenshot 2026-05-10 at 11.12.34.png" width="300" alt="" >
+
+## PHẦN B — THỰC HÀNH CODE (60 điểm)
+
+### Bài B1 (15đ) — Positioning Playground
+
+<img src="/Users/hanguyen/Documents/PBT/PBT_04/screenshots/Screenshot 2026-05-10 at 18.48.12.png" width="500" alt="" >
+
+<img src="/Users/hanguyen/Documents/PBT/PBT_04/screenshots/Screenshot 2026-05-10 at 18.48.51.png" width="500" alt="" >
