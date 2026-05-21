@@ -88,3 +88,9 @@
 2. **Biên dịch:** Công cụ sẽ đọc file `.scss` và chuyển đổi cú pháp SCSS sang các quy tắc CSS thuần túy.
 3. **Output:** Kết quả tạo ra một file `.css` tiêu chuẩn.
 4. **Sử dụng:** Nhúng file `.css` đã được biên dịch vào thẻ `<link>` trong file HTML của bạn.
+
+### Bài B3 (20đ) — SCSS Refactor
+
+- Lệnh compile SCSS sang CSS:
+
+`sass scss/style.scss style.css`

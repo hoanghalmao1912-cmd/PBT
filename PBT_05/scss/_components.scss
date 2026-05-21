@@ -1,0 +1,115 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-md;
+  background: $primary-color;
+  color: white;
+
+  .hamburger {
+    font-size: 24px;
+    cursor: pointer;
+    @include respond-to($breakpoint-tablet) {
+      display: none;
+    }
+  }
+
+  nav {
+    display: none;
+    @include respond-to($breakpoint-tablet) {
+      display: flex;
+      gap: $spacing-lg;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  padding: $spacing-md;
+  gap: $spacing-md;
+
+  @include respond-to($breakpoint-desktop) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .sidebar,
+  .ads-bar {
+    display: none;
+    background: $secondary-color;
+    padding: $spacing-md;
+
+    @include respond-to($breakpoint-tablet) {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .sidebar {
+    @include respond-to($breakpoint-desktop) {
+      width: 250px;
+      flex-shrink: 0;
+    }
+  }
+
+  .ads-bar {
+    @include respond-to($breakpoint-desktop) {
+      display: block;
+      width: 200px;
+      flex-shrink: 0;
+    }
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+
+    @include respond-to($breakpoint-tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to($breakpoint-desktop) {
+      grid-template-columns: repeat(4, 1fr);
+      flex-grow: 1;
+    }
+  }
+}
+
+.card {
+  @include card-shadow;
+  padding: $spacing-sm;
+  text-align: center;
+  transition: transform 0.3s ease;
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  h4 {
+    margin-top: $spacing-sm;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+footer {
+  background: $primary-color;
+  color: white;
+  @include flex-center;
+  padding: $spacing-lg;
+  margin-top: $spacing-lg;
+}

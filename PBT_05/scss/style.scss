@@ -1,0 +1,23 @@
+@import "variables";
+@import "mixins";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-primary;
+  font-size: 14px;
+
+  @include respond-to($breakpoint-tablet) {
+    font-size: 16px;
+  }
+
+  @include respond-to($breakpoint-desktop) {
+    font-size: 18px;
+  }
+}
+
+@import "components";
