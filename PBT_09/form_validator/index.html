@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Đăng Ký</h2>
+      <form id="regForm">
+        <div class="form-group">
+          <label>Họ và Tên</label>
+          <div class="input-wrapper">
+            <input type="text" id="name" placeholder="2-50 ký tự" />
+            <span class="icon" id="nameIcon"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Email</label>
+          <input type="text" id="email" placeholder="example@email.com" />
+          <small class="error-text" id="emailError"></small>
+        </div>
+
+        <div class="form-group">
+          <label>Mật khẩu</label>
+          <input type="password" id="password" placeholder="Nhập mật khẩu" />
+          <div class="strength-meter">
+            <div class="bar" id="strengthBar"></div>
+          </div>
+          <small id="strengthText"></small>
+        </div>
+
+        <div class="form-group">
+          <label>Xác nhận mật khẩu</label>
+          <input type="password" id="confirm" placeholder="Nhập lại mật khẩu" />
+          <small class="error-text" id="confirmError"></small>
+        </div>
+
+        <div class="form-group">
+          <label>Số điện thoại</label>
+          <div class="input-wrapper">
+            <input
+              type="text"
+              id="phone"
+              placeholder="0901-234-567"
+              maxlength="12"
+            />
+            <span class="icon" id="phoneIcon"></span>
+          </div>
+        </div>
+
+        <button type="submit" id="submitBtn" disabled>Đăng Ký</button>
+      </form>
+    </div>
+
+    <div id="modal" class="modal-hidden">
+      <div class="modal-content">
+        <h2 style="color: #28a745; margin-bottom: 15px">
+          Đăng ký thành công! 🎉
+        </h2>
+        <div id="modalInfo"></div>
+        <button id="closeModal" style="margin-top: 15px">Đóng</button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

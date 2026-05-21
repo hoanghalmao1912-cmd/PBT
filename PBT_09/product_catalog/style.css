@@ -1,0 +1,146 @@
+:root {
+  --bg: #fff;
+  --text: #333;
+  --card-bg: #f9f9f9;
+  --border: #ddd;
+}
+body.dark-mode {
+  --bg: #1a1a1a;
+  --text: #fff;
+  --card-bg: #2d2d2d;
+  --border: #444;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: system-ui;
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+}
+.controls {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+input,
+select,
+button {
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg);
+  color: var(--text);
+}
+button {
+  cursor: pointer;
+  background: #007bff;
+  color: white;
+  border: none;
+}
+button:hover {
+  opacity: 0.8;
+}
+
+#categoryNav {
+  padding: 15px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.cat-btn.active {
+  background: #ff4757;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px 30px;
+}
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.card img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+.add-btn {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.cart {
+  position: relative;
+  font-size: 20px;
+  cursor: pointer;
+}
+#cartBadge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 10px;
+}
+
+/* Modal */
+.modal-hidden {
+  display: none;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal-content {
+  background: var(--bg);
+  padding: 25px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  text-align: center;
+}
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: red;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  padding: 0;
+}

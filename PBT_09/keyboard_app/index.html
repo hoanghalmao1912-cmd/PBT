@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keyboard & A11y App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Thư viện Ảnh (Nhấn <kbd>Ctrl</kbd> + <kbd>K</kbd> để mở menu)</h1>
+      <p>
+        Phím tắt: <code>1-9</code> (chọn ảnh), <code>←</code>
+        <code>→</code> (chuyển ảnh), <code>Space</code> (Slide tự động),
+        <code>Esc</code> (Đóng)
+      </p>
+    </header>
+
+    <main>
+      <div
+        id="gallery"
+        class="gallery"
+        role="region"
+        aria-label="Danh sách ảnh"
+      ></div>
+    </main>
+
+    <div
+      id="imageModal"
+      class="hidden overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Trình xem ảnh phóng to"
+    >
+      <div class="modal-content">
+        <button id="closeModal" aria-label="Đóng (Phím Escape)">×</button>
+        <img id="modalImg" src="" alt="Ảnh chi tiết" />
+        <div id="status" aria-live="polite">Đang dừng slideshow</div>
+      </div>
+    </div>
+
+    <div
+      id="cmdPalette"
+      class="hidden overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Bảng lệnh (Command Palette)"
+    >
+      <div class="palette-content">
+        <input
+          type="text"
+          id="cmdInput"
+          placeholder="Tìm kiếm lệnh..."
+          aria-label="Tìm kiếm lệnh"
+          autocomplete="off"
+        />
+        <ul id="cmdList" role="listbox" aria-label="Danh sách lệnh"></ul>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

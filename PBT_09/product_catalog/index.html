@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Store</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h2>JS Store</h2>
+      <div class="controls">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Tìm kiếm sản phẩm..."
+        />
+        <select id="sortSelect">
+          <option value="default">Sắp xếp</option>
+          <option value="priceAsc">Giá tăng dần</option>
+          <option value="priceDesc">Giá giảm dần</option>
+          <option value="nameAsc">Tên A-Z</option>
+          <option value="ratingDesc">Đánh giá cao</option>
+        </select>
+        <button id="themeToggle">🌓</button>
+        <div class="cart" title="Giỏ hàng">
+          🛒 <span id="cartBadge">0</span>
+        </div>
+      </div>
+    </header>
+
+    <nav id="categoryNav"></nav>
+    <main id="productList" class="grid"></main>
+    <div id="modalContainer" class="modal-hidden"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
